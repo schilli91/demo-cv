@@ -12,6 +12,8 @@
 		9F3D73E21EF30F1A00FBCAE1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3D73E01EF30F1A00FBCAE1 /* Main.storyboard */; };
 		9F3D73E41EF30F1A00FBCAE1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9F3D73E31EF30F1A00FBCAE1 /* Assets.xcassets */; };
 		9F3D73E71EF30F1A00FBCAE1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9F3D73E51EF30F1A00FBCAE1 /* LaunchScreen.storyboard */; };
+		9F3D73F51EF3116C00FBCAE1 /* OpenCVWrapper.mm in Sources */ = {isa = PBXBuildFile; fileRef = 9F3D73F41EF3116C00FBCAE1 /* OpenCVWrapper.mm */; };
+		9FC4FBCE1EF315C90097C4D3 /* opencv2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9FC4FBCD1EF315C90097C4D3 /* opencv2.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,10 @@
 		9F3D73E31EF30F1A00FBCAE1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9F3D73E61EF30F1A00FBCAE1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9F3D73E81EF30F1A00FBCAE1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9F3D73F21EF3116C00FBCAE1 /* DemoCV-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DemoCV-Bridging-Header.h"; sourceTree = "<group>"; };
+		9F3D73F31EF3116C00FBCAE1 /* OpenCVWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OpenCVWrapper.h; sourceTree = "<group>"; };
+		9F3D73F41EF3116C00FBCAE1 /* OpenCVWrapper.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OpenCVWrapper.mm; sourceTree = "<group>"; };
+		9FC4FBCD1EF315C90097C4D3 /* opencv2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = opencv2.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +35,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9FC4FBCE1EF315C90097C4D3 /* opencv2.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +47,7 @@
 			children = (
 				9F3D73DB1EF30F1A00FBCAE1 /* DemoCV */,
 				9F3D73DA1EF30F1A00FBCAE1 /* Products */,
+				9F3D73EE1EF30FB700FBCAE1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,6 +62,7 @@
 		9F3D73DB1EF30F1A00FBCAE1 /* DemoCV */ = {
 			isa = PBXGroup;
 			children = (
+				9F3D73F11EF3115000FBCAE1 /* OpenCV */,
 				9F3D73DC1EF30F1A00FBCAE1 /* AppDelegate.swift */,
 				9F3D73DE1EF30F1A00FBCAE1 /* ViewController.swift */,
 				9F3D73E01EF30F1A00FBCAE1 /* Main.storyboard */,
@@ -62,6 +71,24 @@
 				9F3D73E81EF30F1A00FBCAE1 /* Info.plist */,
 			);
 			path = DemoCV;
+			sourceTree = "<group>";
+		};
+		9F3D73EE1EF30FB700FBCAE1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9FC4FBCD1EF315C90097C4D3 /* opencv2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9F3D73F11EF3115000FBCAE1 /* OpenCV */ = {
+			isa = PBXGroup;
+			children = (
+				9F3D73F31EF3116C00FBCAE1 /* OpenCVWrapper.h */,
+				9F3D73F41EF3116C00FBCAE1 /* OpenCVWrapper.mm */,
+				9F3D73F21EF3116C00FBCAE1 /* DemoCV-Bridging-Header.h */,
+			);
+			name = OpenCV;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,6 +123,7 @@
 				TargetAttributes = {
 					9F3D73D81EF30F1A00FBCAE1 = {
 						CreatedOnToolsVersion = 8.3.3;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,6 +166,7 @@
 			files = (
 				9F3D73DF1EF30F1A00FBCAE1 /* ViewController.swift in Sources */,
 				9F3D73DD1EF30F1A00FBCAE1 /* AppDelegate.swift in Sources */,
+				9F3D73F51EF3116C00FBCAE1 /* OpenCVWrapper.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,10 +289,17 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoCV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.schillinger.DemoCV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoCV/DemoCV-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -272,10 +308,16 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = DemoCV/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = de.schillinger.DemoCV;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "DemoCV/DemoCV-Bridging-Header.h";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
@@ -299,6 +341,7 @@
 				9F3D73ED1EF30F1A00FBCAE1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
